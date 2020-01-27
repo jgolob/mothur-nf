@@ -5,7 +5,7 @@ LABEL    software="mothur" \
     container="mothur" \ 
     about.summary="Mothur" \ 
     about.home="http://www.mothur.org/" \ 
-    software.version="" \ 
+    software.version="1.43.0" \ 
     upstream.version="" \ 
     version="1" \ 
     about.copyright="" \ 
@@ -23,6 +23,5 @@ RUN apt-get update && apt-get install -y wget unzip \
 && cp /src/mothur/mothur /usr/local/bin/ && cp /src/mothur/vsearch /usr/local/bin/ && cp /src/mothur/uchime /usr/local/bin/ \
 && cp /src/mothur/blast/bin/* /usr/local/bin/ \
 && cd / && rm -r /src/ \
-&& apt-get -y remove wget unzip && apt-get -y autoremove \
 && apt-get clean && apt-get purge && rm -rf /var/lib/apt/lists/* /tmp/*
 USER biodocker
